@@ -19,10 +19,6 @@ class CreateFinesTable extends Migration
             $table->time('time');
             $table->string('place');
             $table->integer('amount');
-            $table->unsignedBigInteger('id_officer');
-            $table->foreign('id_officer')->references('id')->on('officers');
-            $table->unsignedBigInteger('id_vehicle');
-            $table->foreign('id_vehicle')->references('id')->on('vehicles');
             $table->timestamps();
         });
     }
