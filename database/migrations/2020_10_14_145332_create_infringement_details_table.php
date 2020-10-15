@@ -18,7 +18,7 @@ class CreateInfringementDetailsTable extends Migration
             $table->string('name_infringement');
             $table->integer('code');
             $table->integer('amount');
-            $table->integer('id_fine')->unsigned();
+            $table->unsignedBigInteger('id_fine');
             $table->foreign('id_fine')->references('id')->on('fines');
             $table->timestamps();
         });

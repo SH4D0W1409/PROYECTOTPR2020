@@ -14,16 +14,14 @@ class CreateOfficersTable extends Migration
     public function up()
     {
         Schema::create('officers', function (Blueprint $table) {
-
-            $table->engine = 'InnoDB';
-            $table->id('id_officer');
-            $table->string('name');
-            $table->string('last_name');
-            $table->string('ci');
-            $table->string('address');
-            $table->string('phone');
-            $table->integer('id_position')->unsigned();
-            $table->foreign('id_position')->references('id')->on('position');
+            $table->id();
+            $table->unsignedBigInteger('id_position');
+            $table->string('name',300);
+            $table->string('last_name',300);
+            $table->string('ci',300);
+            $table->string('address',300);
+            $table->string('phone',300);
+            $table->foreign('id_position')->references('id')->on('positions');
             $table->timestamps();
         });
     }

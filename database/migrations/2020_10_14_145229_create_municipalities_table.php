@@ -14,7 +14,7 @@ class CreateMunicipalitiesTable extends Migration
     public function up()
     {
         Schema::create('municipalities', function (Blueprint $table) {
-            $table->id('id_municipality');
+            $table->id();
             $table->string('departament');
             $table->string('municipality');
             $table->timestamps();

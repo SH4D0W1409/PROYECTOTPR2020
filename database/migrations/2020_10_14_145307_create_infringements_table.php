@@ -14,7 +14,7 @@ class CreateInfringementsTable extends Migration
     public function up()
     {
         Schema::create('infringements', function (Blueprint $table) {
-            $table->id('id_infringement');
+            $table->id();
             $table->string('description');
             $table->string('type_infringement');
             $table->timestamps();

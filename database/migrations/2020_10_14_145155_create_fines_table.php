@@ -14,14 +14,14 @@ class CreateFinesTable extends Migration
     public function up()
     {
         Schema::create('fines', function (Blueprint $table) {
-            $table->id('id_fine');
+            $table->id();
             $table->date('date');
             $table->time('time');
             $table->string('place');
             $table->integer('amount');
-            $table->integer('id_officer')->unsigned();
-            $table->foreign('id_oficer')->references('id')->on('officers');
-            $table->integer('id_vehicle')->unsigned();
+            $table->unsignedBigInteger('id_officer');
+            $table->foreign('id_officer')->references('id')->on('officers');
+            $table->unsignedBigInteger('id_vehicle');
             $table->foreign('id_vehicle')->references('id')->on('vehicles');
             $table->timestamps();
         });

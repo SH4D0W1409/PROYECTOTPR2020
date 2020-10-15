@@ -14,14 +14,14 @@ class CreateAccidentsTable extends Migration
     public function up()
     {
         Schema::create('accidents', function (Blueprint $table) {
-            $table->id('id_accident');
+            $table->id();
+            $table->unsignedBigInteger('id_officer');
             $table->date('date');
             $table->time('time');
             $table->string('site');
             $table->string('gravity');
             $table->string('category');
-            $table->integer('id_officer')->unsigned();
-            $table->foreign('id_oficer')->references('id')->on('officers');
+            $table->foreign('id_officer')->references('id')->on('officers');
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateInstitutionsTable extends Migration
     {
         Schema::create('institutions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('supervisor');
+            $table->string('address');
+            $table->string('municipality');
+            $table->integer('phone');
+            $table->unsignedBigInteger('id_officer');
+            $table->foreign('id_officer')->references('id')->on('officers');
             $table->timestamps();
         });
     }
