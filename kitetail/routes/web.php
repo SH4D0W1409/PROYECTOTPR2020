@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 Route::resource('posts', PostController::class);
+use App\Http\Controllers\vehicles;
+Route::resource('vehicles', vehicles::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -19,8 +19,10 @@ class CreateVehiclesTable extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('color');
+            $table->string('owner');
+            $table->string('ci');
             $table->unsignedBigInteger('id_municipality');
-            $table->foreign('id_municipality')->references('id')->on('municipalities');
+            $table->foreign('id_municipality')->references('id')->on('municipality');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();

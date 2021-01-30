@@ -1,6 +1,14 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
+
+<!-- Whatsapp -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=59173366317&text=Hola%20sean%20bienvenidos%20!" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+
+        <script src="https://www.google.com/recaptcha/api.js"></script>
             <x-jet-authentication-card-logo />
         </x-slot>
 
@@ -33,7 +41,7 @@
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-
+                <div class="g-recaptcha" data-sitekey="6LfK0yQaAAAAAKwvkEKdwfp_xxNl-_ANAwWZ-oCH"></div>
                 <x-jet-button class="ml-4">
                     {{ __('Register') }}
                 </x-jet-button>

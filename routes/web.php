@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\vehicleController;
+Route::resource('posts', PostController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +31,6 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('User',UserController::class);
+Route::resource('vehicles',VehicleController::class);
