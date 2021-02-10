@@ -12,7 +12,7 @@ class Vehicle extends Model
     protected $table="vehicles";
     protected $fillable=["plate","brand","model","color","onwer","CI"];
     
-    public function municipality(){
-        return $this->belongsTo(Municipality::class);
+    public function location(){
+        return $this->belongsTo(Location::class);
     }
 }

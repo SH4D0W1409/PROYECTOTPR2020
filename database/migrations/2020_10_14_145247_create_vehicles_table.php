@@ -22,7 +22,7 @@ class CreateVehiclesTable extends Migration
             $table->string('owner');
             $table->string('ci');
             $table->unsignedBigInteger('id_municipality');
-            $table->foreign('id_municipality')->references('id')->on('municipality');
+            $table->foreign('id_municipality')->references('id')->on('locations');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();

@@ -1,13 +1,15 @@
 @extends("app")
 
 @section('content')
+<script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="libros" data-size="large" data-auth-url="" data-request-access="write"></script>
     <div class="flex justify-center flex-wrap bg-gray-200 p-4 mt-5">
         <div class="text-center">
-        <h1 class="mb-5">{{ __("Lista de Profesores")}}</h1>
-        <a href="{{route("vehicle.create")}}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <h1 class="mb-5">{{ __("Lista de vehiculos")}}</h1>
+        <a href="{{route("vehicles.create")}}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         {{ __("Añadir vehicle")}}
         </a>
         </div>
+        <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="https://web.telegram.org/"></script>
     </div>
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
         <thead>

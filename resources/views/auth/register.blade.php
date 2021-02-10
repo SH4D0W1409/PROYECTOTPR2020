@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
+        <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="https://web.telegram.org/"></script>
 
 <!-- Whatsapp -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

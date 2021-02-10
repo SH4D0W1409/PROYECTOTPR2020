@@ -1,3 +1,4 @@
+
 <div class="w-full max-w-lg">
     <div class="flex flex-wrap">
         <h1 class="mb-5">{{ $title }}</h1>
