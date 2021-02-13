@@ -1,9 +1,16 @@
 @extends("app")
 
 @section('content')
-<script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="libros" data-size="large" data-auth-url="" data-request-access="write"></script>
+
+<script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="https://web.telegram.org/"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=59173366317&text=Hola%20sean%20bienvenidos%20!" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+
     <div class="flex justify-center flex-wrap bg-gray-200 p-4 mt-5">
         <div class="text-center">
+        
         <h1 class="mb-5">{{ __("Lista de vehiculos")}}</h1>
         <a href="{{route("vehicles.create")}}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
         {{ __("Añadir vehicle")}}

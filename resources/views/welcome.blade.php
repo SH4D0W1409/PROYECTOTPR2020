@@ -1,68 +1,58 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-guest-layout>
+    <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <x-jet-validation-errors class="mb-4" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-<div class="flex flex-col">
-    @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4 space-x-4 sm:mt-6 sm:mr-6 sm:space-x-6">
-            @auth
-                <a href="{{ url('/dashboard') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Dashboard') }}</a>
-            @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="flex flex-col justify-around h-full">
-            <div>
-                <h1 class="mb-6 text-gray-600 text-center font-light tracking-wider text-4xl sm:mb-8 sm:text-6xl">
-                    {{ config('app.name', 'Laravel') }}
-                </h1>
-                <ul class="flex flex-col space-y-2 sm:flex-row sm:flex-wrap sm:space-x-8 sm:space-y-0">
-                    <li>
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
-                    </li>
-                    <li>
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
-                    </li>
-                    <li>
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
-                    </li>
-                    <li>
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
-                    </li>
-                    <li>
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
-                    </li>
-                    <li>
-                        <a href="https://vapor.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
-                    </li>
-                    <li>
-                        <a href="https://tailwindcss.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Tailwind Css">Tailwind CSS</a>
-                    </li>
-                </ul>
+        @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
             </div>
-        </div>
-    </div>
+        @endif
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <div>
+                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            </div>
+
+            <div class="block mt-4">
+                <label for="remember_me" class="flex items-center">
+                    <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
+                <x-jet-button class="ml-4">
+                    {{ __('Login') }}
+                </x-jet-button>
+            </div>
+            <div class="absolute top-0 right-0 mt-4 mr-4 space-x-4 sm:mt-6 sm:mr-6 sm:space-x-6">
+        
+        <a href="{{ url('/dashboard') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Dashboard') }}</a>
+ 
+        <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
+
+            <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
 </div>
-</body>
-</html>
+
+        </form>
+    </x-jet-authentication-card>
+</x-guest-layout>
+

@@ -60,7 +60,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
                 {{ __("color") }}
             </label>
-            <input name="color" value="{{ old("color") ?? $teacher->color }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="color" type="date">
+            <input name="color" value="{{ old("color") ?? $vehicle->color }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="color" type="date">
             <p class="text-gray-600 text-xs italic">{{ __("color") }}</p>
             @error("name")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -75,7 +75,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
                 {{ __("Propietario") }}
             </label>
-            <input name="Propietario" value="{{ old("Propietario") ?? $teacher->Propietario }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="owner" type="text">
+            <input name="Propietario" value="{{ old("Propietario") ?? $vehicle->Propietario }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="owner" type="text">
             <p class="text-gray-600 text-xs italic">{{ __("Correo electronico del profesor") }}</p>
             @error("name")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -90,7 +90,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
                 {{ __("CI") }}
             </label>
-            <input name="CI" value="{{ old("CI") ?? $teacher->CI }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="CI" type="text">
+            <input name="CI" value="{{ old("CI") ?? $vehicle->CI }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="CI" type="text">
             <p class="text-gray-600 text-xs italic">{{ __("Nombre de usuario del profesor") }}</p>
             @error("name")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -105,7 +105,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
                 {{ __("Contraseña de usuario") }}
             </label>
-            <input name="password" value="{{ old("password") ?? $teacher->password }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="text">
+            <input name="password" value="{{ old("password") ?? $vechicle->password }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="text">
             <p class="text-gray-600 text-xs italic">{{ __("Contraseña del profesor") }}</p>
             @error("name")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -120,7 +120,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
                 {{ __("Teléfono/Celular del profesor") }}
             </label>
-            <input name="telefono" value="{{ old("telefono") ?? $teacher->telefono }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="telefono" type="text">
+            <input name="telefono" value="{{ old("telefono") ?? $vehicle->telefono }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="telefono" type="text">
             <p class="text-gray-600 text-xs italic">{{ __("Numero de celular del profesor") }}</p>
             @error("name")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
